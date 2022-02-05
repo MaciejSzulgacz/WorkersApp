@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="container">
+        <h3 align="center">Django WorkersApp:</h3>
+        <p align="center">Application by Maciej Szulgacz</p>
+    </div>
+    <div class="downloadCSV">
+        <p align="center"><a class="btn btn-success" href="{% url 'workers-csv' %}" target="_blank">Download CSV</a></p>
+    </div>
+{% endblock %}

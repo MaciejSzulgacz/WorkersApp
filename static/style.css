@@ -1,0 +1,35 @@
+.mainDiv{
+    text-align: center;
+}
+
+.mainDiv h2{
+    padding: 2%;
+    font-weight: bold;
+}
+
+.tableDiv{
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.tableDiv table{
+    text-align: center;
+    width:100%;
+    table-layout: fixed;
+     min-width: 5px;
+}
+
+.tableDiv table td {
+    text-align: center;
+}
+
+.tableDiv table th {
+    text-align: center;
+}
+
+.buzzFizzColumn{
+    word-wrap: break-word
+}
+
+.downloadCSV{
+}

@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="mainDiv">
+        <h2>Confirm operation:</h2>
+        <form method="post">
+            {% csrf_token %}
+            <p style="font-size: 20px">Are you sure you want to delete {{ object }}?</p>
+            <input type="submit" class="btn btn-success" value="Confirm"><br>
+        </form>
+    </div>
+{% endblock %}

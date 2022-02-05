@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+{% block content %}
+    <div class="mainDiv">
+        <div class="downloadCSV">
+            <a class="btn btn-success" href="{% url 'workers-csv' %}" target="_blank">Download CSV</a>
+            <h2>Workers:</h2>
+        </div>
+        <div class="tableDiv">
+            <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Age</th>
+                    <th>Profession</th>
+                    <th>Picture</th>
+                    <th>Update</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for object in object_list %}
+                <tr >
+                    <td><a href="/detail/{{ object.pk }}/">{{ object.name }}</a></td>
+                    <td><a href="/detail/{{ object.pk }}/">{{ object.surname }}</a></td>
+                    <td>{{ object.age }}</td>
+                    <td>{{ object.profession }}</td>
+                    <td><img src="{{ object.picture.url }}"></td>
+                    <td>
+                        <div class="downloadCSV">
+                            <a class="btn btn-success" href="/update/{{ object.pk }}/" target="_blank">Update</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="downloadCSV">
+                            <a class="btn btn-success" href="/delete/{{ object.pk }}/" target="_blank">Remove</a>
+                        </div>
+                    </td>
+                </tr>
+            {% empty %}
+                <p>No Workers yet.</p>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+{% endblock %}

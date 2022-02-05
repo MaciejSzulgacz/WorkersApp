@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+{% block content %}
+    <div class="mainDiv">
+        <h2>Worker {{ object.name }} {{ object.surname }} details:</h2>
+        <div class="tableDiv">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Age</th>
+                    <th>Profession</th>
+                    <th>Picture</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{ object.name }}</td>
+                    <td>{{ object.surname }}</td>
+                    <td>{{ object.age }}</td>
+                    <td>{{ object.profession }}</td>
+                    <td><img src="{{ media_url }}{{ img.upload.url }}" width="200" height="200"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
