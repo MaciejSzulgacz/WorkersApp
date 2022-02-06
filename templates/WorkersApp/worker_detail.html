@@ -11,6 +11,8 @@
                     <th>Age</th>
                     <th>Profession</th>
                     <th>Picture</th>
+                    <th>Update</th>
+                    <th>Remove</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -19,7 +21,17 @@
                     <td>{{ object.surname }}</td>
                     <td>{{ object.age }}</td>
                     <td>{{ object.profession }}</td>
-                    <td><img src="{{ media_url }}{{ img.upload.url }}" width="200" height="200"></td>
+                    <td><img src="{{ media_url }}{{ object.picture.url }}"></td>
+                    <td>
+                        <div class="downloadCSV">
+                            <a class="btn btn-success" href="/update/{{ object.pk }}/">Update</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="downloadCSV">
+                            <a class="btn btn-success" href="/delete/{{ object.pk }}/" target="_blank">Remove</a>
+                        </div>
+                    </td>
                 </tr>
                 </tbody>
             </table>

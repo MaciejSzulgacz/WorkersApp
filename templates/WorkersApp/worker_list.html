@@ -2,7 +2,7 @@
 {% block content %}
     <div class="mainDiv">
         <div class="downloadCSV">
-            <a class="btn btn-success" href="{% url 'workers-csv' %}" target="_blank">Download CSV</a>
+            <a class="btn btn-success" href="{% url 'workers-csv' %}" target="_blank">Download report</a>
             <h2>Workers:</h2>
         </div>
         <div class="tableDiv">
@@ -28,7 +28,7 @@
                     <td><img src="{{ object.picture.url }}"></td>
                     <td>
                         <div class="downloadCSV">
-                            <a class="btn btn-success" href="/update/{{ object.pk }}/" target="_blank">Update</a>
+                            <a class="btn btn-success" href="/update/{{ object.pk }}/">Update</a>
                         </div>
                     </td>
                     <td>
