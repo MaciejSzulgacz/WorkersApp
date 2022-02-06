@@ -1,7 +1,7 @@
 import csv
 
 from django.db.models import Avg
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic.detail import DetailView, SingleObjectMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
@@ -9,7 +9,7 @@ from django.views import View
 from django.urls import reverse_lazy
 from .models import Worker
 from .forms import WorkerCreateForm
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 
 class HomeView(View):
@@ -25,12 +25,10 @@ class WorkerCreateView(CreateView):
 
 class WorkerDetailView(DetailView):
     model = Worker
-    success_url = reverse_lazy('worker-detail')
 
 
 class WorkerListView(ListView):
     model = Worker
-    fields = ['name', 'surname', 'age', 'profession', 'picture']
 
 
 class WorkerUpdateView(UpdateView):

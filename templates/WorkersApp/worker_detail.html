@@ -28,9 +28,23 @@
                         </div>
                     </td>
                     <td>
-                        <div class="downloadCSV">
-                            <a class="btn btn-success" href="/delete/{{ object.pk }}/" target="_blank">Remove</a>
-                        </div>
+                        <form action="{% url 'worker-delete' object.id %}" method="post" id="worker_delete_{{ worker.id }}">
+                            {% csrf_token %}
+                            <script>
+                              function submit_delete(id) {
+                                  $.ajax({
+                                      type: $('#worker_delete_'+id).attr('method'),
+                                      url: $('#worker_delete_'+id).attr('action'),
+                                      data: $('#worker_delete_'+id).serialize(),
+                                      success: function (data) {
+                                          $('#worker'+id).remove();
+                                          location.href = "/list";
+                                      }
+                                  });
+                              }
+                            </script>
+                            <input class="btn btn-success" type="button" onclick="submit_delete({{ worker.id }})" value="Remove">
+                        </form>
                     </td>
                 </tr>
                 </tbody>
