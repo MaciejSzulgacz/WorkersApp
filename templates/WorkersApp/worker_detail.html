@@ -21,7 +21,7 @@
                     <td>{{ object.surname }}</td>
                     <td>{{ object.age }}</td>
                     <td>{{ object.profession }}</td>
-                    <td><img src="{{ media_url }}{{ object.picture.url }}"></td>
+                    <td><img src="{{ object.picture.url }}" width="200" height="200" ></td>
                     <td>
                         <div class="downloadCSV">
                             <a class="btn btn-success" href="/update/{{ object.pk }}/">Update</a>

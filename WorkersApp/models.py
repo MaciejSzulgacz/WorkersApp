@@ -9,4 +9,4 @@ class Worker(models.Model):
     picture = models.ImageField(upload_to='./images/')
 
     def __str__(self):
-        return self.name + ' ' + self.surname
+        return f"{self.name} {self.surname}"

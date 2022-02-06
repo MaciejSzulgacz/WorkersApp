@@ -2,7 +2,7 @@ import csv
 
 from django.db.models import Avg
 from django.shortcuts import render
-from django.views.generic.detail import DetailView
+from django.views.generic.detail import DetailView, SingleObjectMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.views import View
