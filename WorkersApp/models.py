@@ -6,7 +6,7 @@ class Worker(models.Model):
     surname = models.CharField(max_length=24)
     age = models.SmallIntegerField()
     profession = models.CharField(max_length=50)
-    picture = models.ImageField(upload_to='./images/')
+    picture = models.ImageField(upload_to="./images/")
 
     def __str__(self):
         return f"{self.name} {self.surname}"
