@@ -3,5 +3,4 @@ __pycache__/
 venv/
 media/
 .pytest_cache/
-task.txt
 .env
