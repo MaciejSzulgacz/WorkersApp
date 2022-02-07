@@ -1,6 +1,7 @@
 {% extends "index.html" %}
 {% block content %}
-    <div class="mainDiv">
+{% load static %}
+    <div align="center" class="mainDiv">
         <div class="downloadCSV">
             <a class="btn btn-success" href="{% url 'workers-csv' %}" target="_blank">Download report</a>
             <h2>Workers:</h2>
@@ -15,25 +16,25 @@
                     <th>Profession</th>
                     <th>Picture</th>
                     <th>Update</th>
-                    <th>Remove</th>
+                    <th>Details</th>
                 </tr>
             </thead>
             <tbody>
             {% for object in object_list %}
-                <tr >
+                <tr>
                     <td><a href="/detail/{{ object.pk }}/">{{ object.name }}</a></td>
                     <td><a href="/detail/{{ object.pk }}/">{{ object.surname }}</a></td>
                     <td>{{ object.age }}</td>
                     <td>{{ object.profession }}</td>
-                    <td><img src="{{ object.picture.url }}"></td>
+                    <td><img src="{{ object.picture.url }}" width="200" height="200"/></td>
                     <td>
                         <div class="downloadCSV">
                             <a class="btn btn-success" href="/update/{{ object.pk }}/">Update</a>
                         </div>
                     </td>
                     <td>
-                        <div class="downloadCSV">
-                            <a class="btn btn-success" href="/delete/{{ object.pk }}/" target="_blank">Remove</a>
+                         <div class="downloadCSV">
+                            <a class="btn btn-success" href="/detail/{{ object.pk }}/">Details</a>
                         </div>
                     </td>
                 </tr>
