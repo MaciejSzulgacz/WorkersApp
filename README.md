@@ -3,11 +3,11 @@
 ### Introduction ###
 
 This application is workers database. By downloading the report in .csv format, 
-you can check the average age for the professions covered by employees.
+you can check the average age for the professions covered by workers.
 
 ### Technology stack ###
 
-Python 3.8.10, Django, Docker, Git
+Python 3.8.10, Django 4.0, Docker, Git
 
 ### Requirements ###
 
