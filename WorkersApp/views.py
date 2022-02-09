@@ -54,9 +54,7 @@ def download_report(request):
     professions_list = Worker.objects.values_list("profession", flat=True).distinct()
 
     for profession in professions_list:
-        profession_avg = Worker.objects.filter(profession=profession).aggregate(
-            Avg("age")
-        )["age__avg"]
+        profession_avg = Worker.objects.filter(profession=profession).aggregate(Avg("age"))["age__avg"]
         file_writer.writerow(([profession, profession_avg]))
 
     return response

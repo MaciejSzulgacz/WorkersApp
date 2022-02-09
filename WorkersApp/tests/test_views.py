@@ -52,13 +52,3 @@ class TestViews(TestCase):
 
         # then
         self.assertEquals(200, response.status_code)
-
-    def test_worker_delete(self):
-        # given
-        worker = Worker.objects.get(name="Joe")
-
-        # when
-        response = self.client.get(reverse("worker-delete", kwargs={"pk": worker.id}))
-
-        # then
-        self.assertEquals(200, response.status_code)
